@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Gyro gyro;
+    WorldRotation wr;
     TextView xValue;
     TextView yValue;
 
@@ -18,21 +18,21 @@ public class MainActivity extends AppCompatActivity {
         xValue = findViewById(R.id.xAxisValue);
         yValue = findViewById(R.id.yAxisValue);
 
-        this.gyro = new Gyro(this, xValue, yValue);
-        gyro.registerListener();
+        this.wr = new WorldRotation(this, xValue, yValue);
+        wr.registerListener();
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        gyro.registerListener();
+        wr.registerListener();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        gyro.unregisterListener();
+        wr.unregisterListener();
     }
 
 }

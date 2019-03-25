@@ -11,7 +11,7 @@ import android.widget.TextView;
 /**
  * This class is used for integrating with the gyroscope hardware
  */
-public class Gyro implements SensorEventListener {
+public class WorldRotation implements SensorEventListener {
 
     Context mContext;
     TextView xValue;
@@ -26,7 +26,7 @@ public class Gyro implements SensorEventListener {
     private Sensor acc;
     private Sensor mac;
 
-    public Gyro(Context mContext, TextView xValue, TextView yValue) {
+    public WorldRotation(Context mContext, TextView xValue, TextView yValue) {
         this.mContext = mContext;
         this.xValue = xValue;
         this.yValue = yValue;
